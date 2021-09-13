@@ -1,0 +1,8 @@
+page 0 contain program code and data.
+page 2 contain program stack.
+In U mode, process can't read/write memory mapped by page 1. (guard page)
+
+because it's possible to have integer overflow. (given a large number 'len')
+Values for srcva: 0x0000000010000000 (+)
+Values for len:   0xFFFFFFFFFFFFFFFF
+                  0x000000000FFFFFFF < srcva < p->sz
